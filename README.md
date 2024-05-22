@@ -12,19 +12,7 @@ git clone https://github.com/yourusername/vue-todo-app.git
 cd vue-todo-app
 ```
 
-2.依存関係をインストールします。
-
-```
-npm install
-```
-
-開発サーバーを起動します。
-
-```
-npm run serve
-```
-
-4.ブラウザで http://localhost:8080 を開きます。
+2.app.htmlのURLを取得してブラウザに入力します。
 
 ## 使用方法
 
