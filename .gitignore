@@ -1,0 +1,9 @@
+# node_modulesディレクトリを無視
+node_modules/
+
+# package.jsonとpackage-lock.jsonを無視
+package.json
+package-lock.json
+
+# eslint.config.jsを無視
+eslint.config.js
