@@ -6,23 +6,42 @@
     <title>Vue.js ToDo App</title>
     <link rel="stylesheet" href="css/style.css" />
   </head>
+
   <body>
     <div id="app">
-      <h1>Todo List</h1>
-      <input
-        class="todo-input"
-        type="text"
-        placeholder="タスクを追加しよう!!"
-        v-model="newTodo"
-      />
-      <button v-on:click="addTodo">追加</button>
+      <header class="header">
+        <h1>Todo List</h1>
+        <div class="add-form">
+          <input
+            class="todo-input"
+            type="text"
+            placeholder="タスクを追加しよう!!"
+            v-model="newTodo"
+          />
+          <button v-on:click="addTodo">追加</button>
+        </div>
+      </header>
+
       <ul>
         <li v-for="(todo, index) in todos" :key="index">
-          {{ todo.text }}
-          <button class="remove" v-on:click="removeTodo(index)">削除</button>
+          <div class="todo-lists" v-if="editIndex !== index">
+            {{ todo.text }}
+            <div>
+              <button class="remove" v-on:click="removeTodo(index)">
+                削除
+              </button>
+              <button class="edit" v-on:click="editTask(index)">編集</button>
+            </div>
+          </div>
+          <div v-else>
+            <input class="input" type="text" v-model="editTodo" />
+            <button class="saveEdit" v-on:click="saveEdit(index)">保存</button>
+            <button class="cancelEdit" v-on:click="cancelEdit">戻る</button>
+          </div>
         </li>
       </ul>
     </div>
+
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="todo.js"></script>
   </body>

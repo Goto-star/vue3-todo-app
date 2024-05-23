@@ -29,11 +29,15 @@ ul {
 }
 
 li {
+  align-items: center;
+  padding: 10px 25px;
+  border-bottom: 1px solid #ccc;
+  font-size: 18px;
+}
+
+.todo-lists {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  padding: 10px;
-  border-bottom: 1px solid #ccc;
 }
 
 button {
@@ -48,4 +52,16 @@ button {
 
 button.remove {
   background-color: #ff1a6f;
+}
+
+button.edit {
+  background-color: #2c7cff;
+}
+
+button.cancelEdit {
+  background-color: #ff1a6f;
+}
+
+button.saveEdit {
+  background-color: #3cb371;
 }
