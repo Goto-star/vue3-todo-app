@@ -41,7 +41,11 @@ button {
   padding: 8px 10px;
   border: none;
   background: #007bff;
-  color: white;
+  color: #fff;
   border-radius: 5px;
   cursor: pointer;
+}
+
+button.remove {
+  background-color: #ff1a6f;
 }

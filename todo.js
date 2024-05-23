@@ -14,6 +14,10 @@ createApp({
       this.newTodo = "";
       this.saveTodo();
     },
+    removeTodo(index) {
+      this.todos.splice(index, 1);
+      this.saveTodo();
+    },
     saveTodo() {
       localStorage.setItem("todos", JSON.stringify(this.todos));
     },

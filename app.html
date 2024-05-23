@@ -15,9 +15,12 @@
         placeholder="タスクを追加しよう!!"
         v-model="newTodo"
       />
-      <button class="btn" v-on:click="addTodo">追加</button>
+      <button v-on:click="addTodo">追加</button>
       <ul>
-        <li v-for="(todo, index) in todos" :key="index">{{todo.text}}</li>
+        <li v-for="(todo, index) in todos" :key="index">
+          {{ todo.text }}
+          <button class="remove" v-on:click="removeTodo(index)">削除</button>
+        </li>
       </ul>
     </div>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
