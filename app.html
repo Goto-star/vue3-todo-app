@@ -13,8 +13,14 @@
         class="todo-input"
         type="text"
         placeholder="タスクを追加しよう!!"
+        v-model="newTodo"
       />
-      <button class="btn">追加</button>
+      <button class="btn" v-on:click="addTodo">追加</button>
+      <ul>
+        <li v-for="(todo, index) in todos" :key="index">{{todo.text}}</li>
+      </ul>
     </div>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="todo.js"></script>
   </body>
 </html>
