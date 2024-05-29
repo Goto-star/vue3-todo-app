@@ -18,7 +18,7 @@
             placeholder="タスクを追加しよう!!"
             v-model="newTodo"
           />
-          <button v-on:click="addTodo">追加</button>
+          <button @click="addTodo">追加</button>
         </div>
       </header>
 
@@ -27,16 +27,14 @@
           <div class="todo-lists" v-if="editIndex !== index">
             {{ todo.text }}
             <div>
-              <button class="remove" v-on:click="removeTodo(index)">
-                削除
-              </button>
-              <button class="edit" v-on:click="editTask(index)">編集</button>
+              <button class="remove" @click="removeTodo(index)">削除</button>
+              <button class="edit" @click="editTask(index)">編集</button>
             </div>
           </div>
           <div v-else>
             <input class="input" type="text" v-model="editTodo" />
-            <button class="saveEdit" v-on:click="saveEdit(index)">保存</button>
-            <button class="cancelEdit" v-on:click="cancelEdit">戻る</button>
+            <button class="saveEdit" @click="saveEdit(index)">保存</button>
+            <button class="cancelEdit" @click="cancelEdit">戻る</button>
           </div>
         </li>
       </ul>
