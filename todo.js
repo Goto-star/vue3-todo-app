@@ -19,7 +19,6 @@ createApp({
         text: newTodo.value,
         done: false,
       })
-      console.log('After adding todo:', JSON.stringify(todos.value))
       newTodo.value = ''
       saveTodo()
     }
